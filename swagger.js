@@ -13,6 +13,9 @@ const options = {
       {
         url: "http://localhost:3000/api",
       },
+      {
+        url: "https://smallhrms.onrender.com/api",
+      },
     ],
     components: {
       schemas: {

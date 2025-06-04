@@ -71,6 +71,13 @@ const createCollections = async () => {
 // Connect to MongoDB
 connectDB();
 setupSwagger(app);
+
+app.get("/", (req, res) => {
+  res.json({
+    success: true,
+    message: "Welcome to Small Hrms Portel"
+  });
+});
 // Routes
 app.use("/api", routes);
 
