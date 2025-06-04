@@ -75,7 +75,11 @@ setupSwagger(app);
 app.get("/", (req, res) => {
   res.json({
     success: true,
-    message: "Welcome to Small Hrms Portel"
+    message: "Welcome to Small Hrms Portel",
+    localUrl: "localhost:3000/api",
+    localSwagger: "localhost:3000/api-docs",
+    liveURL: "https://hrms-portal.onrender.com/api",
+    documentation: "https://hrms-portal.onrender.com/api-docs",
   });
 });
 // Routes

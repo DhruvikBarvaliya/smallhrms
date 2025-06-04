@@ -1,11 +1,13 @@
 # HRMS (Human Resource Management System)
 
 ## Project Description
+
 HRMS is a web application designed to manage human resources processes such as employee records, payroll, recruitment, and performance management. This application aims to streamline HR operations and improve efficiency within organizations.
 
 ## Setup Steps
 
 1. **Clone the repository**
+
    ```bash
    git clone <repository-url>
    cd hrms
@@ -13,6 +15,7 @@ HRMS is a web application designed to manage human resources processes such as e
 
 2. **Install dependencies**
    Make sure you have Node.js and npm installed. Run the following command to install the required dependencies:
+
    ```bash
    npm install
    ```
@@ -22,6 +25,7 @@ HRMS is a web application designed to manage human resources processes such as e
 
 4. **Run the application**
    You can start the application using the following command:
+
    ```bash
    npm start
    ```
@@ -30,4 +34,5 @@ HRMS is a web application designed to manage human resources processes such as e
    Open your web browser and navigate to `http://localhost:3000` (or the port specified in your application) to access the HRMS application.
 
 ## Additional Information
+
 Refer to the documentation in the `src` directory for more details on the application's structure and functionality.

@@ -1,7 +1,7 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const employeeController = require('../controller/EmployeeController');
-const leaveController = require('../controller/LeaveController');
+const employeeController = require("../controller/EmployeeController");
+const leaveController = require("../controller/LeaveController");
 
 /**
  * @swagger
@@ -32,7 +32,7 @@ const leaveController = require('../controller/LeaveController');
  *       201:
  *         description: Employee created successfully
  */
-router.post('/employees', employeeController.createEmployee);
+router.post("/employees", employeeController.createEmployee);
 
 /**
  * @swagger
@@ -44,7 +44,7 @@ router.post('/employees', employeeController.createEmployee);
  *       200:
  *         description: List of all employees
  */
-router.get('/employees', employeeController.getAllEmployees);
+router.get("/employees", employeeController.getAllEmployees);
 
 /**
  * @swagger
@@ -62,7 +62,7 @@ router.get('/employees', employeeController.getAllEmployees);
  *       200:
  *         description: Employee data returned
  */
-router.get('/employees/:id', employeeController.getEmployeeById);
+router.get("/employees/:id", employeeController.getEmployeeById);
 
 /**
  * @swagger
@@ -85,7 +85,7 @@ router.get('/employees/:id', employeeController.getEmployeeById);
  *       200:
  *         description: Employee updated
  */
-router.put('/employees/:id', employeeController.updateEmployee);
+router.put("/employees/:id", employeeController.updateEmployee);
 
 /**
  * @swagger
@@ -103,8 +103,7 @@ router.put('/employees/:id', employeeController.updateEmployee);
  *       200:
  *         description: Employee deleted
  */
-router.delete('/employees/:id', employeeController.deleteEmployee);
-
+router.delete("/employees/:id", employeeController.deleteEmployee);
 
 // ===========================
 // Leave Routes
@@ -126,7 +125,7 @@ router.delete('/employees/:id', employeeController.deleteEmployee);
  *       201:
  *         description: Leave applied
  */
-router.post('/leaves', leaveController.applyLeave);
+router.post("/leaves", leaveController.applyLeave);
 
 /**
  * @swagger
@@ -138,7 +137,7 @@ router.post('/leaves', leaveController.applyLeave);
  *       200:
  *         description: List of all leave applications
  */
-router.get('/leaves', leaveController.getAllLeaves);
+router.get("/leaves", leaveController.getAllLeaves);
 
 /**
  * @swagger
@@ -156,7 +155,7 @@ router.get('/leaves', leaveController.getAllLeaves);
  *       200:
  *         description: Leaves of specific employee
  */
-router.get('/leaves/employee/:employeeId', leaveController.getLeavesByEmployee);
+router.get("/leaves/employee/:employeeId", leaveController.getLeavesByEmployee);
 
 /**
  * @swagger
@@ -174,7 +173,7 @@ router.get('/leaves/employee/:employeeId', leaveController.getLeavesByEmployee);
  *       200:
  *         description: Leave approved
  */
-router.put('/leaves/:id/approve', leaveController.approveLeave);
+router.put("/leaves/:id/approve", leaveController.approveLeave);
 
 /**
  * @swagger
@@ -192,7 +191,7 @@ router.put('/leaves/:id/approve', leaveController.approveLeave);
  *       200:
  *         description: Leave rejected
  */
-router.put('/leaves/:id/reject', leaveController.rejectLeave);
+router.put("/leaves/:id/reject", leaveController.rejectLeave);
 
 /**
  * @swagger
@@ -210,7 +209,7 @@ router.put('/leaves/:id/reject', leaveController.rejectLeave);
  *       200:
  *         description: Leave deleted
  */
-router.delete('/leaves/:id', leaveController.deleteLeave);
+router.delete("/leaves/:id", leaveController.deleteLeave);
 
 /**
  * @swagger
@@ -228,7 +227,7 @@ router.delete('/leaves/:id', leaveController.deleteLeave);
  *       200:
  *         description: Leave balance
  */
-router.get('/employees/:id/leave-balance', leaveController.getLeaveBalance);
+router.get("/employees/:id/leave-balance", leaveController.getLeaveBalance);
 
 /**
  * @swagger
@@ -246,7 +245,10 @@ router.get('/employees/:id/leave-balance', leaveController.getLeaveBalance);
  *       200:
  *         description: Leave balance updated
  */
-router.post('/employees/:id/update-leave-balance', leaveController.updateLeaveBalance);
+router.post(
+  "/employees/:id/update-leave-balance",
+  leaveController.updateLeaveBalance
+);
 
 /**
  * @swagger
@@ -258,7 +260,7 @@ router.post('/employees/:id/update-leave-balance', leaveController.updateLeaveBa
  *       200:
  *         description: Monthly leaves processed
  */
-router.post('/process-monthly-leaves', leaveController.processMonthlyLeaves);
+router.post("/process-monthly-leaves", leaveController.processMonthlyLeaves);
 
 /**
  * @swagger
@@ -276,7 +278,10 @@ router.post('/process-monthly-leaves', leaveController.processMonthlyLeaves);
  *       200:
  *         description: Leave report for employee
  */
-router.get('/reports/employee/:employeeId/leaves', leaveController.getEmployeeLeaveReport);
+router.get(
+  "/reports/employee/:employeeId/leaves",
+  leaveController.getEmployeeLeaveReport
+);
 
 /**
  * @swagger
@@ -299,6 +304,9 @@ router.get('/reports/employee/:employeeId/leaves', leaveController.getEmployeeLe
  *       200:
  *         description: Monthly leave report
  */
-router.get('/reports/monthly-leaves/:year/:month', leaveController.getMonthlyLeaveReport);
+router.get(
+  "/reports/monthly-leaves/:year/:month",
+  leaveController.getMonthlyLeaveReport
+);
 
 module.exports = router;
