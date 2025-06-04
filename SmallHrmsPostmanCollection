@@ -1,0 +1,398 @@
+{
+	"info": {
+		"_postman_id": "1d1c8ab2-73d1-452b-951e-9b91e776a86a",
+		"name": "Employee Leave Management API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19223942"
+	},
+	"item": [
+		{
+			"name": "Create Employee",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"employeeId\": 1,\n    \"name\": \"Chirag Hirapara\",\n    \"email\": \"appcity8542@gmail.com\",\n    \"phone\": \"9998867024\",\n    \"department\": \"Information Technology\",\n    \"position\": \"Software Developer\",\n    \"joiningDate\": \"2018-05-01\",\n    \"leaveBalance\": 18,\n    \"monthlyLeaveAccrued\": 1.5,\n    \"extraHoursBalance\": 6,\n    \"dateOfBirth\": \"1996-02-17\",\n    \"qualification\": \"Computer Engineering\",\n    \"passOutYear\": 2017,\n    \"reference\": \"Owner\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/employees",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Employees",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/employees",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Employee By ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/employees/60f5a3b3e1a1e22b4c8b4567",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"employees",
+						"60f5a3b3e1a1e22b4c8b4567"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Employee",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"John Updated\",\n    \"phone\": \"9876543210\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/employees/60f5a3b3e1a1e22b4c8b4567",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"employees",
+						"60f5a3b3e1a1e22b4c8b4567"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Employee",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/employees/60f5a3b3e1a1e22b4c8b4567",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"employees",
+						"60f5a3b3e1a1e22b4c8b4567"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Apply Leave",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"employeeId\": \"683fe8f3ec1f83f56a854396\",\n    \"leaveType\": \"full_day\",\n    \"startDate\": \"2025-08-01\",\n    \"endDate\": \"2025-08-02\",\n    \"reason\": \"Vacation\",\n    \"totalDays\": 2,\n    \"month\": 8,\n    \"year\": 2025\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/leaves",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"leaves"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Leaves",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/leaves",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"leaves"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Leaves By Employee",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/leaves/employee/683fe8f3ec1f83f56a854396",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"leaves",
+						"employee",
+						"683fe8f3ec1f83f56a854396"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Approve Leave",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/leaves/60f5a3b3e1a1e22b4c8b1234/approve",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"leaves",
+						"60f5a3b3e1a1e22b4c8b1234",
+						"approve"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reject Leave",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/leaves/60f5a3b3e1a1e22b4c8b1234/reject",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"leaves",
+						"60f5a3b3e1a1e22b4c8b1234",
+						"reject"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Leave",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/leaves/60f5a3b3e1a1e22b4c8b1234",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"leaves",
+						"60f5a3b3e1a1e22b4c8b1234"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Leave Balance",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/employees/60f5a3b3e1a1e22b4c8b4567/leave-balance",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"employees",
+						"60f5a3b3e1a1e22b4c8b4567",
+						"leave-balance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Leave Balance",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"leaveBalance\": 20,\n    \"monthlyLeaveAccrued\": 2\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/employees/60f5a3b3e1a1e22b4c8b4567/update-leave-balance",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"employees",
+						"60f5a3b3e1a1e22b4c8b4567",
+						"update-leave-balance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Process Monthly Leaves",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/process-monthly-leaves",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"process-monthly-leaves"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Employee Leave Report",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/reports/employee/60f5a3b3e1a1e22b4c8b4567/leaves",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"reports",
+						"employee",
+						"60f5a3b3e1a1e22b4c8b4567",
+						"leaves"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Monthly Leave Report",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/reports/monthly-leaves/2023/8",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"reports",
+						"monthly-leaves",
+						"2023",
+						"8"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -8,7 +8,8 @@ const createEmployee = async (req, res) => {
     // Generate employee ID if not provided
     if (!employeeData.employeeId) {
       const count = await Employee.countDocuments();
-      employeeData.employeeId = `EMP${String(count + 1).padStart(4, "0")}`;
+      employeeData.employeeId = count + 1;
+      //employeeData.employeeId = `EMP${String(count + 1).padStart(4, "0")}`;
     }
 
     const employee = new Employee(employeeData);
